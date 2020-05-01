@@ -579,8 +579,10 @@ int main() {
             FND[3] = (Count_total)-(Count_total / 10) * 10;
         }
         
-        printf("send main to out\n");
+        
+        //printf("send main to out\n");
         int i, j;
+        /*
         for(i = 0; i < 4; i++) {
             shmaddr_2->FND[i] = FND[i];
             printf("%d ", shmaddr_2->FND[i]);
@@ -600,7 +602,7 @@ int main() {
             for(j = 0; j < 7; j++){
                 shmaddr_2->Draw_Matrix[i][j] = Draw_Matrix[i][j];
             }
-        }
+        }*/
         shmaddr_2->mode =mode;
         shmaddr_2->led_mode = led_mode;
         shmaddr_2->Text_len = Text_len;
@@ -608,14 +610,14 @@ int main() {
         shmaddr_2->curser = curser;
         shmaddr_2->y = y;
         shmaddr_2->x = x;
-        
+        /*
         printf("%d %d %d %d %d %d %d\n", shmaddr_2->mode,
                shmaddr_2->led_mode,
                shmaddr_2->Text_len,
                shmaddr_2->Text_mode,
                shmaddr_2->curser,
                shmaddr_2->y,
-               shmaddr_2->x);
+               shmaddr_2->x);*/
         //printf("modeeeeee : %d\n", mode);
         prevValue = ev[0].value;
         usleep(2000000);
