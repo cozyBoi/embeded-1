@@ -68,7 +68,7 @@ void entry_input(){
     }
     buff_size = sizeof(push_sw_buff);
     int i;
-    key_t key = ftok("./", 1);
+    key_t key = ftok("/data", 1);
     int shmid = shmget(key, sizeof(struct in_packet), IPC_CREAT|0644);
     struct in_packet* shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     memset(shmaddr, 0, sizeof(struct packet));
@@ -99,6 +99,7 @@ void entry_input(){
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", push_sw_buff[i3]);
         }
+        printf("\n");
         usleep(1000000);
         
         usleep(250000);

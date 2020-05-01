@@ -146,22 +146,15 @@ int main() {
     printf("init2\n");
     usleep(2000000);
     printf("main\n");
-    key_t key0 = ftok("./", 1);
-    printf("before\n");
+    key_t key0 = ftok("/data", 1);
     int shmid = shmget(key0, sizeof(struct in_packet), IPC_CREAT|0644);
-    printf("after\n");
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
-    printf("where\n");
     //memset(shmaddr, 0, sizeof(struct in_packet)); //팅김
-    printf("where\n");
+    
     key_t key2 = ftok("./", 3);
-    printf("where\n");
     int shmid_2 = shmget(key2, sizeof(struct packet), IPC_CREAT|0644);
-    printf("where\n");
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
-    printf("where\n");
-    //memset(shmaddr_2, 0, sizeof(struct packet));
-    printf("where\n");
+    
     int prevValue = -1;
     while(1){
         //forK?
