@@ -47,6 +47,10 @@ int vv(int semid) {
 }
 
 
+typedef struct in_packet{
+    struct input_event ev[BUFF_SIZE];
+    unsigned char push_sw_buff[9];
+};
 void entry_input(){
     printf("init input\n");
     struct input_event ev[BUFF_SIZE];
@@ -82,13 +86,13 @@ void entry_input(){
         rd = read(fd, ev, size * BUFF_SIZE);
         rrdd = read(dev, &push_sw_buff, buff_size);
         //printf("input read\n");
-        shmaddr->type = ev[0].type;
-        shmaddr->value = ev[0].value;
-        shmaddr->code = ev[0].code;
+        shmaddr->ev[0].type = ev[0].type;
+        shmaddr->ev[0].value = ev[0].value;
+        shmaddr->ev[0].code = ev[0].code;
         
         strcpy(shmaddr->push_sw_buff, push_sw_buff);
         
-        printf("[in] shm value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
+        printf("[in] shm value's %d %d %d\n",shmaddr->ev[0].type,shmaddr->ev[0].value,shmaddr->ev[0].code);
         int i3 = 0;
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", shmaddr->push_sw_buff[i3]);

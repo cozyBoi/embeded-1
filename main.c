@@ -169,7 +169,7 @@ int main() {
         ev[0].code = shmaddr->code;
         strcpy(push_sw_buff, shmaddr->push_sw_buff);
         //shm -> main
-        printf("[main] shm value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
+        printf("[main] shm value's %d %d %d\n",shmaddr->ev[0].type,shmaddr->ev[0].value,shmaddr->ev[0].code);
         int i3 = 0;
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", shmaddr->push_sw_buff[i3]);

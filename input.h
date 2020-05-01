@@ -3,12 +3,7 @@
 
 
 
-typedef struct in_packet{
-    int type;
-    int value;
-    int code;
-    unsigned char push_sw_buff[9];
-};
+typedef struct in_packet;
 
 int pp (int semid);
 
