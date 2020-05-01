@@ -285,6 +285,6 @@ void entry_output(){
             }
             out_to_FND(shmaddr_2->FND);
         }
-        usleep(500000);
+        usleep(250000);
     }
 }
