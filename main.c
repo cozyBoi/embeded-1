@@ -188,15 +188,15 @@ int main() {
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
             mode = (mode + 1) % 4;
             reset_para();
-            //printf("mode : %d\n", mode);
+            printf("mode : %d\n", mode);
         }
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 114 && prevValue == KEY_PRESS) {
             mode = mode ? mode - 1 : 3;
             reset_para();
-            //printf("mode : %d\n", mode);
+            printf("mode : %d\n", mode);
         }
-        
+        /*
         if (mode == 0) {
             if(firstExec){
                 Clock_FND_set_to_borad_time();
@@ -579,7 +579,7 @@ int main() {
             FND[3] = (Count_total)-(Count_total / 10) * 10;
         }
         
-        
+        */
         //printf("send main to out\n");
         int i, j;
         /*
