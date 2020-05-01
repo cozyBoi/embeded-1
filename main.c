@@ -562,7 +562,7 @@ int main() {
         //printf("send main to out\n");
         int i, j;
         
-        printf("Text_Len : %d\n", Text_Len);
+        printf("Text_Len : %d\n", Text_len);
         usleep(100000);
         
         for(i = 0; i < 4; i++) {
