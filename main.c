@@ -178,7 +178,7 @@ int main() {
         printf("\n\n\n\n");
         
         printf("[main] value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
-        int i3 = 0;
+        
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", shmaddr->push_sw_buff[i3]);
         }
