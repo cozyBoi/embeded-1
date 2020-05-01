@@ -166,7 +166,7 @@ int main() {
         ev[0].code = shmaddr->code;
         int i3 = 0;
         printf("but : ");
-        for(i3 = 0; i < 9; i++){
+        for(i3 = 0; i3 < 9; i3++){
             push_sw_buff[i] = (shmaddr->push_sw_buff)[i];
             printf("%d%d ", push_sw_buff[i], (shmaddr->push_sw_buff)[i]);
         }
