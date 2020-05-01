@@ -184,7 +184,7 @@ void entry_output(){
     printf("init output\n");
     int k = 0;
     
-    int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0600);
+    int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0644);
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     memset(shmaddr_2, 0, sizeof(struct packet));
     

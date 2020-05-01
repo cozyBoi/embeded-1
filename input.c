@@ -68,7 +68,7 @@ void entry_input(){
     }
     buff_size = sizeof(push_sw_buff);
     int i;
-    int shmid = shmget((key_t) 0x10, sizeof(struct in_packet), IPC_CREAT|0600);
+    int shmid = shmget((key_t) 0x10, sizeof(struct in_packet), IPC_CREAT|0644);
     struct in_packet* shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     memset(shmaddr, 0, sizeof(struct packet));
     //shm open
