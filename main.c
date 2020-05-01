@@ -164,10 +164,12 @@ int main() {
         ev[0].value = shmaddr->value;
         ev[0].code = shmaddr->code;
         int i3 = 0;
+        printf("but : ");
         for(i3 = 0; i < 9; i++){
             push_sw_buff[i] = (shmaddr->push_sw_buff)[i];
+            printf("%d ", push_sw_buff[i]);
         }
-        
+        printf("\n");
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
             mode = (mode + 1) % 4;
