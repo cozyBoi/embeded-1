@@ -176,7 +176,7 @@ int main() {
         }
         printf("\n");
         
-        printf("[main] value's %d %d %d\n",ev[0].typee,ev[0].value,ev[0].code);
+        printf("[main] value's %d %d %d\n",ev[0].type,ev[0].value,ev[0].code);
         
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", push_sw_buff[i3]);
