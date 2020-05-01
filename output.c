@@ -92,30 +92,31 @@ void out_to_FND(char data[4]) {
 }
 
 /*
-void out_to_LED(char data_arr[8]) {
-    int dev;
-    
-    dev = open(LED_DEVICE, O_RDWR);
-    if (dev<0) {
-        printf("Device open error : %s\n", LED_DEVICE);
-        exit(1);
-    }
-    
-    int data = 0;
-    
-    for (i = 0; i < 8; i++) {
-        data += (1 << (7 - i)) * data_arr[i];
-    }
-    
-    write(dev, &data, 1);
-    
-    close(dev);
-}*/
+ void out_to_LED(char data_arr[8]) {
+ int dev;
+ 
+ dev = open(LED_DEVICE, O_RDWR);
+ if (dev<0) {
+ printf("Device open error : %s\n", LED_DEVICE);
+ exit(1);
+ }
+ 
+ int data = 0;
+ 
+ for (i = 0; i < 8; i++) {
+ data += (1 << (7 - i)) * data_arr[i];
+ }
+ 
+ write(dev, &data, 1);
+ 
+ close(dev);
+ }*/
 
 #define FPGA_BASE_ADDRESS 0x08000000 //fpga_base address
 #define LED_ADDR 0x16
 
 void out_to_LED(char data_arr[8]) {
+    int fd,i;
     unsigned long *fpga_addr = 0;
     unsigned char *led_addr =0;
     unsigned char data;
