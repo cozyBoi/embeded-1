@@ -165,7 +165,7 @@ int main() {
         ev[0].code = shmaddr->code;
         int i3 = 0;
         for(i3 = 0; i < 9; i++){
-            push_sw_buff[i] = shmaddr->push_sw_buff[i];
+            push_sw_buff[i] = (shmaddr->push_sw_buff)[i];
         }
         
         

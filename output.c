@@ -234,7 +234,7 @@ void entry_output(){
             char tmp_Draw_Matrix[10][7];
             if(shmaddr_2->curser == 1){
                 int ii = 0, jj = 0;
-                for(ii = 0 ; ii < 10; ii++){
+                for(ii = 0; ii < 10; ii++){
                     for(jj = 0; jj < 7; jj++){
                         tmp_Draw_Matrix[ii][jj] = shmaddr_2->Draw_Matrix[ii][jj];
                     }

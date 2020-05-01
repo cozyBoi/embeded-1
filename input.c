@@ -84,7 +84,10 @@ void entry_input(){
         shmaddr->value = ev[0].value;
         shmaddr->code = ev[0].code;
         
-        strcpy(shmaddr->push_sw_buff, push_sw_buff);
+        for(i = 0; i < 9; i++){
+            (shmaddr->push_sw_buff)[i] = push_sw_buff;
+        }
+        
     }
     close(dev);
 }
