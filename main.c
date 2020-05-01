@@ -155,7 +155,6 @@ int main() {
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     
     int prevValue = -1;
-    usleep(2000000);
     while(1){
         //forK?
         //printf("mode : %d\n", mode);
