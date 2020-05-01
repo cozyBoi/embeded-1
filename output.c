@@ -241,7 +241,7 @@ void entry_output(){
         }
         else if (shmaddr_2->mode == 3){
             char tmp_Draw_Matrix[10][7];
-            if(shmaddr_2->curser == 1){
+            if(shmaddr_2->curser == 0){
                 int ii = 0, jj = 0;
                 for(ii = 0; ii < 10; ii++){
                     for(jj = 0; jj < 7; jj++){
