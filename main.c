@@ -164,23 +164,6 @@ int main() {
         ev[0].value = shmaddr->value;
         ev[0].code = shmaddr->code;
         strcpy(push_sw_buff, shmaddr->push_sw_buff);
-        //shm -> main
-        /*
-        printf("[main] shm value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
-        int i3 = 0;
-        for(i3 = 0; i3 < 9; i3++){
-            printf("%d ", (shmaddr->push_sw_buff)[i3]);
-        }
-        printf("\n");
-        
-        printf("[main] value's %d %d %d\n",ev[0].type,ev[0].value,ev[0].code);
-        
-        for(i3 = 0; i3 < 9; i3++){
-            printf("%d ", push_sw_buff[i3]);
-        }
-        usleep(1000000);
-         */
-        //memset(shmaddr, 0, sizeof(struct packet));
         
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
@@ -575,20 +558,20 @@ int main() {
             FND[2] = (Count_total / 10) - (Count_total / 100) * 10;
             FND[3] = (Count_total)-(Count_total / 10) * 10;
         }
-        /*
+        
         //printf("send main to out\n");
         int i, j;
         
         for(i = 0; i < 4; i++) {
             shmaddr_2->FND[i] = FND[i];
-            printf("%d ", shmaddr_2->FND[i]);
+            //printf("%d ", shmaddr_2->FND[i]);
         }
-        printf("\n");
+        //printf("\n");
         for(i = 0; i < 8; i++) {
             shmaddr_2->LED[i] = LED[i];
-            printf("%d ", shmaddr_2->LED[i]);
+            //printf("%d ", shmaddr_2->LED[i]);
         }
-        printf("\n");
+        //printf("\n");
         for(i = 0; i < 2; i++){
             for(j = 0; j < 100; j++){
                 shmaddr_2->TextLED[i][j] = TextLED[i][j];
@@ -598,7 +581,7 @@ int main() {
             for(j = 0; j < 7; j++){
                 shmaddr_2->Draw_Matrix[i][j] = Draw_Matrix[i][j];
             }
-        }*/
+        }
         shmaddr_2->mode =mode;
         shmaddr_2->led_mode = led_mode;
         shmaddr_2->Text_len = Text_len;
@@ -606,18 +589,7 @@ int main() {
         shmaddr_2->curser = curser;
         shmaddr_2->y = y;
         shmaddr_2->x = x;
-        /*
-        printf("%d %d %d %d %d %d %d\n", shmaddr_2->mode,
-               shmaddr_2->led_mode,
-               shmaddr_2->Text_len,
-               shmaddr_2->Text_mode,
-               shmaddr_2->curser,
-               shmaddr_2->y,
-               shmaddr_2->x);*/
-        //printf("modeeeeee : %d\n", mode);
         prevValue = ev[0].value;
-        //usleep(2000000);
-        //usleep(250000);
     }
     return 0;
 }

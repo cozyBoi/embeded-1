@@ -207,14 +207,14 @@ void entry_output(){
             else{
                 if(led_mode == 1){
                     out_to_LED(led3);
-                    if(j == 2){
+                    if(j == 4){
                         j = 0;
                         led_mode = 0;
                     }
                 }
                 else{
                     out_to_LED(led4);
-                    if(j == 2){
+                    if(j == 4){
                         j = 0;
                         led_mode = 1;
                     }
