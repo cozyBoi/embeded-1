@@ -51,17 +51,20 @@ void entry_input(){
     printf("init input\n");
     struct input_event ev[BUFF_SIZE];
     int fd, rd, value, size = sizeof(struct input_event);
+    printf("where1\n");
     char* device = "/dev/input/event0";return;
     int dev, buff_size;
     unsigned char push_sw_buff[MAX_BUTTON];
     struct in_packet in_pac;
     
+    printf("where2\n");
     if ((fd = open(device, O_RDONLY | O_NONBLOCK)) == -1) {
         printf("%s is not a vaild device.n", device);
     }
-    
+    printf("where3\n");
     memset(&in_pac, 0, sizeof(struct in_packet));
     dev = open("/dev/fpga_push_switch", O_RDWR | O_NONBLOCK);
+    printf("where4\n");
     printf("dev : %d\n", dev);
     if (dev<0) {
         printf("Device Open Error\n");

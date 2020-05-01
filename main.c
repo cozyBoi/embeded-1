@@ -620,8 +620,8 @@ int main() {
                shmaddr_2->x);*/
         //printf("modeeeeee : %d\n", mode);
         prevValue = ev[0].value;
-        usleep(2000000);
-        usleep(500000);
+        //usleep(2000000);
+        //usleep(500000);
     }
     return 0;
 }
