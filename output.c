@@ -173,7 +173,7 @@ void out_to_Matrix(char matrix[10][7]) {
         fpga_data[i] = arr_to_int(matrix[i]);
         //printf("%d ", fpga_data[i]);
     }
-    printf("\n");
+    //printf("\n");
     //
     write(dev, fpga_data, 10);
     
