@@ -190,8 +190,8 @@ int main() {
             }
             if (push_sw_buff[0] == 1) {
                 Text_mode = ~Text_mode;
-                printf("pushed");
-                printf("Text_mode");
+                printf("pushed\n");
+                printf("Text_mode\n");
                 push_sw_buff[0] = 0;
             }
             else if (push_sw_buff[1] == 1) {
@@ -640,7 +640,7 @@ int main() {
             printf("%d ", TextLED[0][i]);
         }
         printf("\n");*/
-        //usleep(500000);
+        usleep(250000);
         
     }
     return 0;
