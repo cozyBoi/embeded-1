@@ -92,6 +92,7 @@ void entry_input(){
         }
         //printf("\n");
         //do well
+        
     }
     close(dev);
 }
