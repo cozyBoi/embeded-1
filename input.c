@@ -17,7 +17,6 @@
 #include <sys/ioctl.h>
 #include <time.h>
 #include <sys/shm.h>
-#include <linux/input.h>
 #include <sys/types.h>
 #include <sys/sem.h>
 #include <sys/ipc.h>
@@ -47,10 +46,6 @@ int vv(int semid) {
 }
 
 
-typedef struct in_packet{
-    struct input_event ev[BUFF_SIZE];
-    unsigned char push_sw_buff[9];
-};
 void entry_input(){
     printf("init input\n");
     struct input_event ev[BUFF_SIZE];

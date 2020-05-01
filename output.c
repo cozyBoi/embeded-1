@@ -7,7 +7,6 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <dirent.h>
-#include <linux/input.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/select.h>
