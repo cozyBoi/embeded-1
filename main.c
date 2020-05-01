@@ -146,8 +146,7 @@ int main() {
     printf("init2\n");
     usleep(2000000);
     printf("main\n");
-    key_t key0 = ftok("/data", 1);
-    int shmid = shmget(key0, sizeof(struct in_packet), IPC_CREAT|0644);
+    int shmid = shmget((key_t) 0x10, sizeof(struct in_packet), IPC_CREAT|0644);
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     //memset(shmaddr, 0, sizeof(struct in_packet)); //팅김
     
@@ -180,7 +179,7 @@ int main() {
             printf("%d ", push_sw_buff[i3]);
         }
         usleep(1000000);
-        memset(shmaddr, 0, sizeof(struct packet));
+        //memset(shmaddr, 0, sizeof(struct packet));
         
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
