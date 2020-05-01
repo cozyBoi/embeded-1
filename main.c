@@ -145,8 +145,8 @@ int main() {
     mode = 0;
     curser = 0;
     printf("init2\n");
+    usleep(2000000);
     printf("input main\n");
-    
     key_t key0 = ftok("./", 1);
     int shmid = shmget(key0, sizeof(struct in_packet), IPC_CREAT|0644);
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);

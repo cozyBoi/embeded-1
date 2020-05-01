@@ -77,7 +77,7 @@ void entry_input(){
     //shm open
     
     while (1) {
-        //printf("input start\n");
+        printf("input start\n");
         int rrdd = 0;
         
         rd = read(fd, ev, size * BUFF_SIZE);
