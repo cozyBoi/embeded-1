@@ -579,7 +579,7 @@ int main() {
             FND[1] = (Count_total / 100) - (Count_total / 1000) * 10;
             FND[2] = (Count_total / 10) - (Count_total / 100) * 10;
             FND[3] = (Count_total)-(Count_total / 10) * 10;
-            printf("y,x\n", y, x);
+            printf("y,x : %d,%d\n", y, x);
             usleep(250000);
         }
         
