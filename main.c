@@ -143,6 +143,7 @@ int main() {
     led_mode = 0;
     mode = 0;
     curser = 0;
+    reset_para();
     printf("init2\n");
     
     printf("main\n");
@@ -501,7 +502,7 @@ int main() {
         }
         else if (mode == 3) {
             if (push_sw_buff[0] == 1) {
-                printf("clear loc\n");
+                //printf("clear loc\n");
                 push_sw_buff[0] = 0;
                 int i = 0, j = 0;
                 for (i = 0; i < 4; i++) FND[i] = 0;
@@ -519,7 +520,7 @@ int main() {
                 Count_total++;
             }
             else if (push_sw_buff[2] == 1) {
-                printf("curser\n");
+                //printf("curser\n");
                 push_sw_buff[2] = 0;
                 if(curser == 0) curser = 1;
                 else curser = 0;
@@ -547,7 +548,7 @@ int main() {
                 Count_total++;
             }
             else if (push_sw_buff[6] == 1) {
-                printf("clear\n");
+                //printf("clear\n");
                 push_sw_buff[6] = 0;
                 int i, j;
                 for(i = 0; i < 10; i++){
@@ -563,7 +564,7 @@ int main() {
                 Count_total++;
             }
             else if (push_sw_buff[8] == 1) {
-                printf("ban jeon\n");
+                //printf("ban jeon\n");
                 push_sw_buff[8] = 0;
                 int i = 0, j = 0;
                 for (i = 0; i < 10; i++) {
@@ -583,8 +584,8 @@ int main() {
             FND[1] = (Count_total / 100) - (Count_total / 1000) * 10;
             FND[2] = (Count_total / 10) - (Count_total / 100) * 10;
             FND[3] = (Count_total)-(Count_total / 10) * 10;
-            printf("y,x : %d,%d\n", y, x);
-            usleep(250000);
+            //printf("y,x : %d,%d\n", y, x);
+//           usleep(250000);
         }
         
         //printf("send main to out\n");
