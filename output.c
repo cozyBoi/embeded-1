@@ -193,7 +193,7 @@ void entry_output(){
     while(1){
         int j = 0;
 
-        
+        int led_mode = 0;
         
         if(shmaddr_2->mode == 0){
             //out_to_FND(shmaddr_2->FND);
@@ -201,18 +201,18 @@ void entry_output(){
                 out_to_LED(led1);
             }
             else{
-                if(shmaddr_2->led_mode == 1){
+                if(led_mode == 1){
                     out_to_LED(led3);
                     if(j == 5){
                         j = 0;
-                        shmaddr_2->led_mode = 0;
+                        led_mode = 0;
                     }
                 }
                 else{
                     out_to_LED(led4);
                     if(j == 5){
                         j = 0;
-                        shmaddr_2->led_mode = 1;
+                        led_mode = 1;
                     }
                 }
                 j++;
@@ -253,6 +253,6 @@ void entry_output(){
             }
             //out_to_FND(shmaddr_2->FND);
         }
-        usleep(10000);
+        usleep(250000);
     }
 }
