@@ -501,6 +501,7 @@ int main() {
         }
         else if (mode == 3) {
             if (push_sw_buff[0] == 1) {
+                printf("clear loc\n");
                 push_sw_buff[0] = 0;
                 int i = 0, j = 0;
                 for (i = 0; i < 4; i++) FND[i] = 0;
@@ -518,6 +519,7 @@ int main() {
                 Count_total++;
             }
             else if (push_sw_buff[2] == 1) {
+                printf("curser\n");
                 push_sw_buff[2] = 0;
                 if(curser == 0) curser = 1;
                 else curser = 0;
@@ -545,6 +547,7 @@ int main() {
                 Count_total++;
             }
             else if (push_sw_buff[6] == 1) {
+                printf("clear\n");
                 push_sw_buff[6] = 0;
                 int i, j;
                 for(i = 0; i < 10; i++){
@@ -560,6 +563,7 @@ int main() {
                 Count_total++;
             }
             else if (push_sw_buff[8] == 1) {
+                printf("ban jeon\n");
                 push_sw_buff[8] = 0;
                 int i = 0, j = 0;
                 for (i = 0; i < 10; i++) {
