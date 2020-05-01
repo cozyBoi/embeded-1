@@ -144,7 +144,7 @@ int main() {
     mode = 0;
     curser = 0;
     printf("init2\n");
-    usleep(2000000);
+    
     printf("main\n");
     int shmid = shmget((key_t) 0x10, sizeof(struct in_packet), IPC_CREAT|0600);
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
@@ -154,6 +154,7 @@ int main() {
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     
     int prevValue = -1;
+    usleep(2000000);
     while(1){
         //forK?
         //printf("mode : %d\n", mode);
