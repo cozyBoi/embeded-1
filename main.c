@@ -176,10 +176,10 @@ int main() {
         }
         printf("\n");
         
-        printf("[main] value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
+        printf("[main] value's %d %d %d\n",ev[0].typee,ev[0].value,ev[0].code);
         
         for(i3 = 0; i3 < 9; i3++){
-            printf("%d ", shmaddr->push_sw_buff[i3]);
+            printf("%d ", push_sw_buff[i3]);
         }
         usleep(1000000);
         memset(shmaddr, 0, sizeof(struct packet));
