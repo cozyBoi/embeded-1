@@ -145,7 +145,7 @@ int main() {
     curser = 0;
     printf("init2\n");
     usleep(2000000);
-    printf("input main\n");
+    printf("main\n");
     key_t key0 = ftok("./", 1);
     int shmid = shmget(key0, sizeof(struct in_packet), IPC_CREAT|0644);
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
@@ -159,7 +159,6 @@ int main() {
     while(1){
         //forK?
         //printf("mode : %d\n", mode);
-        usleep(2000000);
         
         struct in_packet in_pac;
         
