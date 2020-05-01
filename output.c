@@ -22,6 +22,7 @@
 
 
 char led1[8] = { 1, 0 ,0, 0, 0, 0 ,0 ,0 };
+char led2[8] = { 0, 1 ,0, 0, 0, 0 ,0 ,0 };
 char led3[8] = { 0, 0 ,1, 0, 0, 0 ,0 ,0 };
 char led4[8] = { 0, 0 ,0, 1, 0, 0 ,0 ,0 };
 
@@ -195,40 +196,6 @@ void entry_output(){
     while(1){
         
         //잘받았나 확인
-        /*
-        printf("out\n");
-        printf("FND : ");
-        for(i = 0; i < 4; i++){
-            printf("%d ", (shmaddr_2->FND)[i]);
-        }
-        printf("\n");
-        
-        printf("LED : ");
-        for(i = 0; i < 8; i++){
-            printf("%d ", (shmaddr_2->LED)[i]);
-        }
-        printf("\n");
-        
-        printf("LCD : ");
-        for(i = 0; i < 8; i++){
-            printf("%d ", (shmaddr_2->TextLED)[0][i]);
-        }
-        printf("\n");
-        usleep(500000);*/
-        /*
-         (shmaddr_2->Draw_Matrix)[10][7];
-         shmaddr_2->mode;
-         shmaddr_2->led_mode;
-         shmaddr_2->Text_len;
-         shmaddr_2->Text_mode;
-         shmaddr_2->curser;
-         shmaddr_2->y;
-         shmaddr_2->x;*/
-        
-        
-        //printf("Text_mode : %d\n", shmaddr_2->Text_mode);
-        //printf("led_mode : %d %d\n",led_mode, j);
-        
         if(shmaddr_2->mode == 0){
             out_to_FND(shmaddr_2->FND);
             if(shmaddr_2->Text_mode == 0){
@@ -254,6 +221,18 @@ void entry_output(){
         }
         else if (shmaddr_2->mode == 1){
             out_to_FND(shmaddr_2->FND);
+            if(shmaddr_2->curser == 10){
+                out_to_LED(led2);
+            }
+            else if(shmaddr_2->curser == 8){
+                out_to_LED(led3);
+            }
+            else if(shmaddr_2->curser == 4){
+                out_to_LED(led4);
+            }
+            else if(shmaddr_2->curser == 2){
+                out_to_LED(led1);
+            }
         }
         else if (shmaddr_2->mode == 2){
             out_to_LCD((shmaddr_2->TextLED)[0], shmaddr_2->Text_len);
