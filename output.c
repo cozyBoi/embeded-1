@@ -190,14 +190,15 @@ void entry_output(){
     
     struct packet out;
     int led_mode = 0;
+    int j = 0;
     while(1){
-        int j = 0;
+        
 
         
         
         //printf("Text_mode : %d\n", shmaddr_2->Text_mode);
-        //printf("led_mode : %d\n",led_mode)
-        
+        //printf("led_mode : %d %d\n",led_mode, j);
+        //usleep(500000);
         if(shmaddr_2->mode == 0){
             //out_to_FND(shmaddr_2->FND);
             if(shmaddr_2->Text_mode == 0){
@@ -206,14 +207,14 @@ void entry_output(){
             else{
                 if(led_mode == 1){
                     out_to_LED(led3);
-                    if(j == 5){
+                    if(j == 2){
                         j = 0;
                         led_mode = 0;
                     }
                 }
                 else{
                     out_to_LED(led4);
-                    if(j == 5){
+                    if(j == 2){
                         j = 0;
                         led_mode = 1;
                     }
