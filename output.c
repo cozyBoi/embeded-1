@@ -91,6 +91,7 @@ void out_to_FND(char data[4]) {
     close(dev);
 }
 
+/*
 void out_to_LED(char data_arr[8]) {
     int dev;
     
@@ -109,6 +110,42 @@ void out_to_LED(char data_arr[8]) {
     write(dev, &data, 1);
     
     close(dev);
+}*/
+
+#define FPGA_BASE_ADDRESS 0x08000000 //fpga_base address
+#define LED_ADDR 0x16
+
+void out_to_LED(char data_arr[8]) {
+    unsigned long *fpga_addr = 0;
+    unsigned char *led_addr =0;
+    unsigned char data;
+    
+    fd = open("/dev/mem", O_RDWR | O_SYNC);
+    if (fd < 0) {
+        perror("/dev/mem open error");
+        exit(1);
+    }
+    
+    fpga_addr = (unsigned long *)mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_SHARED, fd, FPGA_BASE_ADDRESS);
+    if (fpga_addr == MAP_FAILED)
+    {
+        printf("mmap error!\n");
+        close(fd);
+        exit(1);
+    }
+    
+    led_addr=(unsigned char*)((void*)fpga_addr+LED_ADDR);
+    
+    int data = 0;
+    
+    for (i = 0; i < 8; i++) {
+        data += (1 << (7 - i)) * data_arr[i];
+    }
+    
+    *led_addr=data; //write led
+    
+    munmap(led_addr, 4096);
+    close(fd);
 }
 
 void out_to_LCD(char str[100], int len) {
