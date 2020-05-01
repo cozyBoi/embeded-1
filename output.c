@@ -187,9 +187,14 @@ void entry_output(){
     int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0644);
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     memset(shmaddr_2, 0, sizeof(struct packet));
+    
+    struct packet out;
+    
     while(1){
         int j = 0;
 
+        
+        
         if(shmaddr_2->mode == 0){
             //out_to_FND(shmaddr_2->FND);
             if(shmaddr_2->Text_mode == 0){
@@ -248,6 +253,6 @@ void entry_output(){
             }
             //out_to_FND(shmaddr_2->FND);
         }
-        usleep(200000);
+        usleep(10000);
     }
 }

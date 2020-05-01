@@ -575,7 +575,6 @@ int main() {
             FND[2] = (Count_total / 10) - (Count_total / 100) * 10;
             FND[3] = (Count_total)-(Count_total / 10) * 10;
         }
-        
         /*
         //printf("send main to out\n");
         int i, j;
