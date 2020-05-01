@@ -211,16 +211,24 @@ int main() {
         }
         else if (mode == 1) {
             if (push_sw_buff[0] == 1) {
+                push_sw_buff[0] = 0;
                 Count_jinsu = Count_jinsu - 2 ? Count_jinsu - 2 : 10;
+                printf("jinsu : %d\n", Count_jinsu);
                 if(Count_jinsu == 6) Count_jinsu -= 2;
             }
             else if (push_sw_buff[1] == 1) {
+                push_sw_buff[1] = 0;
+                printf("total : %d\n", Count_total);
                 Count_total += Count_jinsu * Count_jinsu;
             }
             else if (push_sw_buff[2] == 1) {
+                push_sw_buff[2] = 0;
+                printf("total : %d\n", Count_total);
                 Count_total += Count_jinsu;
             }
             else if (push_sw_buff[3] == 1) {
+                push_sw_buff[3] = 0;
+                printf("total : %d\n", Count_total);
                 Count_total += 1;
             }
             //display
