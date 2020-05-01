@@ -159,7 +159,7 @@ int main() {
     int prevValue = -1;
     while(1){
         //forK?
-        printf("mode : %d\n", mode);
+        //printf("mode : %d\n", mode);
         usleep(2000000);
         
         struct in_packet in_pac;
@@ -175,7 +175,6 @@ int main() {
             printf("%d ", shmaddr->push_sw_buff[i3]);
         }
         printf("\n");
-        printf("\n\n\n\n");
         
         printf("[main] value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
         
@@ -189,13 +188,13 @@ int main() {
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
             mode = (mode + 1) % 4;
             reset_para();
-            printf("mode : %d\n", mode);
+            //printf("mode : %d\n", mode);
         }
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 114 && prevValue == KEY_PRESS) {
             mode = mode ? mode - 1 : 3;
             reset_para();
-            printf("mode : %d\n", mode);
+            //printf("mode : %d\n", mode);
         }
         
         if (mode == 0) {
