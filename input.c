@@ -103,7 +103,7 @@ void entry_input(){
          */
         //usleep(1000000);
         
-        usleep(250000);
+        //usleep(250000);
     }
     close(dev);
 }

@@ -618,7 +618,7 @@ int main() {
         //printf("modeeeeee : %d\n", mode);
         prevValue = ev[0].value;
         //usleep(2000000);
-        usleep(250000);
+        //usleep(250000);
     }
     return 0;
 }
