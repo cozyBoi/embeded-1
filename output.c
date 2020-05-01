@@ -198,14 +198,14 @@ void entry_output(){
             else{
                 if(shmaddr_2->led_mode == 1){
                     out_to_LED(led3);
-                    if(j == 10){
+                    if(j == 5){
                         j = 0;
                         shmaddr_2->led_mode = 0;
                     }
                 }
                 else{
                     out_to_LED(led4);
-                    if(j == 10){
+                    if(j == 5){
                         j = 0;
                         shmaddr_2->led_mode = 1;
                     }
@@ -248,5 +248,6 @@ void entry_output(){
             }
             //out_to_FND(shmaddr_2->FND);
         }
+        usleep(200000);
     }
 }
