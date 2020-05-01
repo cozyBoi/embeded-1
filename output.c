@@ -19,7 +19,7 @@
 #include <sys/types.h>
 #include <sys/sem.h>
 #include <sys/ipc.h>
-
+#include <sys/mman.h>
 
 char led1[8] = { 1, 0 ,0, 0, 0, 0 ,0 ,0 };
 char led2[8] = { 0, 1 ,0, 0, 0, 0 ,0 ,0 };
