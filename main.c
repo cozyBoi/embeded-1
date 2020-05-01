@@ -654,7 +654,7 @@ int main() {
             printf("%d ", TextLED[0][i]);
         }
         printf("\n");*/
-        usleep(250000);
+        //usleep(250000);
         
     }
     return 0;

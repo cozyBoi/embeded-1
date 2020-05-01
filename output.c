@@ -270,12 +270,12 @@ void entry_output(){
                     }
                 }
                 
-                if(k <= 10){
+                if(k <= 4){
                     tmp_Draw_Matrix[shmaddr_2->y][shmaddr_2->x] = 1;
                 }
                 else{
                     tmp_Draw_Matrix[shmaddr_2->y][shmaddr_2->x] = 0;
-                    if(k > 20) k = 0;
+                    if(k > 4) k = 0;
                 }
                 out_to_Matrix(tmp_Draw_Matrix);
                 k++;
