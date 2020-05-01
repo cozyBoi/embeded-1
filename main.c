@@ -169,12 +169,12 @@ int main() {
         
         struct in_packet in_pac;
         
-        ev[0].type = (shmaddr->ev[0]).type;
-        ev[0].value = (shmaddr->ev[0]).value;
-        ev[0].code = (shmaddr->ev[0]).code;
+        ev[0].type = (shmaddr->ev).type;
+        ev[0].value = (shmaddr->ev).value;
+        ev[0].code = (shmaddr->ev).code;
         strcpy(push_sw_buff, shmaddr->push_sw_buff);
         //shm -> main
-        printf("[main] shm value's %d %d %d\n",(shmaddr->ev[0]).type,(shmaddr->ev[0]).value,(shmaddr->ev[0]).code);
+        printf("[main] shm value's %d %d %d\n",(shmaddr->ev).type,(shmaddr->ev).value,(shmaddr->ev).code);
         int i3 = 0;
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", (shmaddr->push_sw_buff)[i3]);
