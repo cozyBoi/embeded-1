@@ -146,11 +146,11 @@ int main() {
     printf("init2\n");
     usleep(2000000);
     printf("main\n");
-    int shmid = shmget((key_t) 0x10, sizeof(struct in_packet), IPC_CREAT|0644);
+    int shmid = shmget((key_t) 0x10, sizeof(struct in_packet), IPC_CREAT|0600);
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     //memset(shmaddr, 0, sizeof(struct in_packet)); //팅김
     
-    int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0644);
+    int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0600);
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     
     int prevValue = -1;
