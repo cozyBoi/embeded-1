@@ -194,7 +194,7 @@ int main() {
                 printf("Text_mode\n");
                 push_sw_buff[0] = 0;
             }
-            else if (push_sw_buff[1] == 1) {
+            else if (push_sw_buff[1] == 1 &&  Text_mode) {
                 Clock_FND_set_to_borad_time();
                 push_sw_buff[1] = 0;
             }
