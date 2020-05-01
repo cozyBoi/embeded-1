@@ -167,7 +167,7 @@ int main() {
         printf("but : ");
         for(i3 = 0; i < 9; i++){
             push_sw_buff[i] = (shmaddr->push_sw_buff)[i];
-            printf("%d ", push_sw_buff[i]);
+            printf("%d%d ", push_sw_buff[i], (shmaddr->push_sw_buff)[i]);
         }
         printf("\n");
         
