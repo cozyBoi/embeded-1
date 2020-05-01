@@ -183,8 +183,8 @@ void out_to_Matrix(char matrix[10][7]) {
 void entry_output(){
     printf("init output\n");
     int k = 0;
-    key_t key2 = ftok("./", 3);
-    int shmid_2 = shmget(key2, sizeof(struct packet), IPC_CREAT|0644);
+    
+    int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0644);
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     memset(shmaddr_2, 0, sizeof(struct packet));
     while(1){

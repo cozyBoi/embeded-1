@@ -150,8 +150,7 @@ int main() {
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     //memset(shmaddr, 0, sizeof(struct in_packet)); //팅김
     
-    key_t key2 = ftok("./", 3);
-    int shmid_2 = shmget(key2, sizeof(struct packet), IPC_CREAT|0644);
+    int shmid_2 = shmget((key_t) 0x15, sizeof(struct packet), IPC_CREAT|0644);
     struct packet*shmaddr_2 = (struct packet*)shmat(shmid_2, NULL, 0);
     
     int prevValue = -1;
@@ -195,7 +194,6 @@ int main() {
             reset_para();
             printf("mode : %d\n", mode);
         }
-        /*
         if (mode == 0) {
             if(firstExec){
                 Clock_FND_set_to_borad_time();
@@ -578,10 +576,10 @@ int main() {
             FND[3] = (Count_total)-(Count_total / 10) * 10;
         }
         
-        */
+        /*
         //printf("send main to out\n");
         int i, j;
-        /*
+        
         for(i = 0; i < 4; i++) {
             shmaddr_2->FND[i] = FND[i];
             printf("%d ", shmaddr_2->FND[i]);
