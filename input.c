@@ -81,13 +81,13 @@ void entry_input(){
         rd = read(fd, ev, size * BUFF_SIZE);
         rrdd = read(dev, &push_sw_buff, buff_size);
         //printf("input read\n");
-        (shmaddr->ev).type = ev[0].type;
-        (shmaddr->ev).value = ev[0].value;
-        (shmaddr->ev).code = ev[0].code;
+        shmaddr->type = ev[0].type;
+        shmaddr->value = ev[0].value;
+        shmaddr->code = ev[0].code;
         
         strcpy(shmaddr->push_sw_buff, push_sw_buff);
         
-        printf("[in] shm value's %d %d %d\n",(shmaddr->ev).type,(shmaddr->ev).value,(shmaddr->ev).code);
+        printf("[in] shm value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
         int i3 = 0;
         for(i3 = 0; i3 < 9; i3++){
             printf("%d ", (shmaddr->push_sw_buff)[i3]);

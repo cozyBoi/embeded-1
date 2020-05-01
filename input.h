@@ -5,7 +5,9 @@
 
 
 typedef struct in_packet{
-    struct input_event ev;
+    int type;
+    int value;
+    int code;
     unsigned char push_sw_buff[9];
 };
 
