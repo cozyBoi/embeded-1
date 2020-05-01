@@ -136,8 +136,6 @@ void out_to_LED(char data_arr[8]) {
     
     led_addr=(unsigned char*)((void*)fpga_addr+LED_ADDR);
     
-    int data = 0;
-    
     for (i = 0; i < 8; i++) {
         data += (1 << (7 - i)) * data_arr[i];
     }
