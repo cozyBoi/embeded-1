@@ -189,11 +189,14 @@ void entry_output(){
     memset(shmaddr_2, 0, sizeof(struct packet));
     
     struct packet out;
-    
+    int led_mode = 0;
     while(1){
         int j = 0;
 
-        int led_mode = 0;
+        
+        
+        //printf("Text_mode : %d\n", shmaddr_2->Text_mode);
+        //printf("led_mode : %d\n",led_mode)
         
         if(shmaddr_2->mode == 0){
             //out_to_FND(shmaddr_2->FND);
