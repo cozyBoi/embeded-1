@@ -101,7 +101,7 @@ void entry_input(){
         }
         printf("\n");
          */
-        usleep(1000000);
+        //usleep(1000000);
         
         usleep(250000);
     }
