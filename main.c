@@ -569,23 +569,23 @@ int main() {
         //usleep(100000);
         
         for(i = 0; i < 4; i++) {
-            shmaddr_2->FND[i] = FND[i];
+            (shmaddr_2->FND)[i] = FND[i];
             //printf("%d ", shmaddr_2->FND[i]);
         }
         //printf("\n");
         for(i = 0; i < 8; i++) {
-            shmaddr_2->LED[i] = LED[i];
+            (shmaddr_2->LED)[i] = LED[i];
             //printf("%d ", shmaddr_2->LED[i]);
         }
         //printf("\n");
         for(i = 0; i < 1; i++){
             for(j = 0; j < 100; j++){
-                shmaddr_2->TextLED[i][j] = TextLED[i][j];
+                (shmaddr_2->TextLED)[i][j] = TextLED[i][j];
             }
         }
         for(i = 0; i < 10; i++){
             for(j = 0; j < 7; j++){
-                shmaddr_2->Draw_Matrix[i][j] = Draw_Matrix[i][j];
+                (shmaddr_2->Draw_Matrix)[i][j] = Draw_Matrix[i][j];
             }
         }
         shmaddr_2->mode =mode;
