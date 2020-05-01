@@ -166,6 +166,7 @@ int main() {
         ev[0].code = shmaddr->code;
         strcpy(push_sw_buff, shmaddr->push_sw_buff);
         //shm -> main
+        /*
         printf("[main] shm value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
         int i3 = 0;
         for(i3 = 0; i3 < 9; i3++){
@@ -179,6 +180,7 @@ int main() {
             printf("%d ", push_sw_buff[i3]);
         }
         usleep(1000000);
+         */
         //memset(shmaddr, 0, sizeof(struct packet));
         
         
@@ -618,7 +620,7 @@ int main() {
         //printf("modeeeeee : %d\n", mode);
         prevValue = ev[0].value;
         //usleep(2000000);
-        //usleep(500000);
+        usleep(500000);
     }
     return 0;
 }

@@ -86,6 +86,7 @@ void entry_input(){
         
         strcpy(shmaddr->push_sw_buff, push_sw_buff);
         
+        /*
         printf("[in] shm value's %d %d %d\n",shmaddr->type,shmaddr->value,shmaddr->code);
         int i3 = 0;
         for(i3 = 0; i3 < 9; i3++){
@@ -99,6 +100,7 @@ void entry_input(){
             printf("%d ", push_sw_buff[i3]);
         }
         printf("\n");
+         */
         usleep(1000000);
         
         usleep(250000);
