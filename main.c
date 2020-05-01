@@ -165,12 +165,12 @@ int main() {
         ev[0].value = shmaddr->value;
         ev[0].code = shmaddr->code;
         int i3 = 0;
-        printf("but : ");
+        //printf("but : ");
         for(i3 = 0; i3 < 9; i3++){
             push_sw_buff[i3] = (shmaddr->push_sw_buff)[i3];
-            printf("%d%d ", push_sw_buff[i3], (shmaddr->push_sw_buff)[i3]);
+            //printf("%d%d ", push_sw_buff[i3], (shmaddr->push_sw_buff)[i3]);
         }
-        printf("\n");
+        //printf("\n");
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
             mode = (mode + 1) % 4;
@@ -640,7 +640,7 @@ int main() {
             printf("%d ", TextLED[0][i]);
         }
         printf("\n");*/
-        usleep(500000);
+        //usleep(500000);
         
     }
     return 0;
