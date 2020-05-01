@@ -245,7 +245,13 @@ int main() {
             int curr = Text_len - 1;
             if (push_sw_buff[1] == 1 && push_sw_buff[2] == 1) {
                 for (i = 0; i < 10; i++) TextLED[0][i] = 0;
-                Text_len = 0;
+                if(Text_Len <= 8){
+                    Text_Len =0;
+                }
+                else{
+                    Text_len -= 8;
+                }
+                
                 Count_total++;
                 push_sw_buff[1] = push_sw_buff[2] = 0;
             }
