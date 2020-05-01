@@ -247,7 +247,7 @@ int main() {
             if (push_sw_buff[1] == 1 && push_sw_buff[2] == 1) {
                 for (i = 0; i < 10; i++) TextLED[0][i] = 0;
                 if(Text_len <= 8){
-                    Text_len =0;
+                    Text_len = 1;
                 }
                 else{
                     Text_len -= 8;
