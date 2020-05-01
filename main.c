@@ -596,6 +596,27 @@ int main() {
         shmaddr_2->y = y;
         shmaddr_2->x = x;
         prevValue = ev[0].value;
+        
+        printf("main\n");
+        printf("FND : ");
+        for(i = 0; i < 4; i++){
+            printf("%d ", (shmaddr_2->FND)[i]);
+        }
+        printf("\n");
+        
+        printf("LED : ");
+        for(i = 0; i < 8; i++){
+            printf("%d ", (shmaddr_2->LED)[i]);
+        }
+        printf("\n");
+        
+        printf("LCD : ");
+        for(i = 0; i < 8; i++){
+            printf("%d ", (shmaddr_2->TextLED)[0][i]);
+        }
+        printf("\n");
+        usleep(500000);
+        
     }
     return 0;
 }

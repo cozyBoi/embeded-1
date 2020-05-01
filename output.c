@@ -196,6 +196,7 @@ void entry_output(){
         
         //잘받았나 확인
         
+        printf("out\n");
         printf("FND : ");
         for(i = 0; i < 4; i++){
             printf("%d ", (shmaddr_2->FND)[i]);
