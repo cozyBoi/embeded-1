@@ -147,7 +147,9 @@ int main() {
     usleep(2000000);
     printf("main\n");
     key_t key0 = ftok("./", 1);
+    printf("before\n");
     int shmid = shmget(key0, sizeof(struct in_packet), IPC_CREAT|0644);
+    printf("after\n");
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     memset(shmaddr, 0, sizeof(struct packet));
     
