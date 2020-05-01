@@ -163,7 +163,10 @@ int main() {
         ev[0].type = shmaddr->type;
         ev[0].value = shmaddr->value;
         ev[0].code = shmaddr->code;
-        strcpy(push_sw_buff, shmaddr->push_sw_buff);
+        int i3 = 0;
+        for(i3 = 0; i < 9; i++){
+            push_sw_buff[i] = shmaddr->push_sw_buff[i];
+        }
         
         
         if (ev[0].type == 1 && ev[0].value == KEY_RELEASE &&  ev[0].code == 115 && prevValue == KEY_PRESS) {
@@ -562,8 +565,8 @@ int main() {
         //printf("send main to out\n");
         int i, j;
         
-        printf("Text_Len : %d\n", Text_len);
-        usleep(100000);
+        //printf("Text_Len : %d\n", Text_len);
+        //usleep(100000);
         
         for(i = 0; i < 4; i++) {
             shmaddr_2->FND[i] = FND[i];
