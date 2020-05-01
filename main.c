@@ -152,7 +152,7 @@ int main() {
     printf("after\n");
     struct in_packet*shmaddr = (struct in_packet*)shmat(shmid, NULL, 0);
     printf("where\n");
-    memset(shmaddr, 0, sizeof(struct packet));
+    memset(shmaddr, 0, sizeof(struct in_packet)); //팅김
     printf("where\n");
     key_t key2 = ftok("./", 3);
     printf("where\n");
