@@ -84,13 +84,13 @@ void entry_input(){
         shmaddr->value = ev[0].value;
         shmaddr->code = ev[0].code;
         
-        /*
-        printf("main but : ");
+        
+        //printf("main but : ");
         for(i = 0; i < 9; i++){
             (shmaddr->push_sw_buff)[i] = push_sw_buff[i];
-            printf("%d%d", push_sw_buff[i], (shmaddr->push_sw_buff)[i]);
+          //  printf("%d%d", push_sw_buff[i], (shmaddr->push_sw_buff)[i]);
         }
-        printf("\n");*/
+        //printf("\n");
         //do well
     }
     close(dev);
