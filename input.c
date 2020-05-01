@@ -85,7 +85,7 @@ void entry_input(){
         shmaddr->code = ev[0].code;
         
         for(i = 0; i < 9; i++){
-            (shmaddr->push_sw_buff)[i] = push_sw_buff;
+            (shmaddr->push_sw_buff)[i] = push_sw_buff[i];
         }
         
     }
