@@ -187,6 +187,8 @@ int main() {
             }
             if (push_sw_buff[0] == 1) {
                 Text_mode = ~Text_mode;
+                printf("pushed");
+                printf("Text_mode");
                 push_sw_buff[0] = 0;
             }
             else if (push_sw_buff[1] == 1) {
@@ -616,6 +618,7 @@ int main() {
             printf("%d ", (shmaddr_2->TextLED)[0][i]);
         }
         printf("\n");*/
+        /*
         printf("main\n");
         printf("FND : ");
         for(i = 0; i < 4; i++){
@@ -633,7 +636,7 @@ int main() {
         for(i = 0; i < 8; i++){
             printf("%d ", TextLED[0][i]);
         }
-        printf("\n");
+        printf("\n");*/
         usleep(500000);
         
     }

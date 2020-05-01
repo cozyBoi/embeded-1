@@ -195,7 +195,7 @@ void entry_output(){
     while(1){
         
         //잘받았나 확인
-        
+        /*
         printf("out\n");
         printf("FND : ");
         for(i = 0; i < 4; i++){
@@ -214,7 +214,7 @@ void entry_output(){
             printf("%d ", (shmaddr_2->TextLED)[0][i]);
         }
         printf("\n");
-        usleep(500000);
+        usleep(500000);*/
         /*
          (shmaddr_2->Draw_Matrix)[10][7];
          shmaddr_2->mode;
